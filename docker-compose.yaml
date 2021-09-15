@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+
+  scrap:
+    build: ./
+    environment:
+        #- ROOT=http://golang.org/
+        - ROOT=http://site:8080
+        - DEPTH=3
+    depends_on: 
+        - site
+
+  site:
+    build: ./test-site
